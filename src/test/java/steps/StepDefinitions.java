@@ -1,10 +1,12 @@
 package steps;
 
 
-import cucumber.api.java.en.And;
+import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+import java.util.List;
 
 public class StepDefinitions {
 
@@ -20,9 +22,18 @@ public class StepDefinitions {
         System.out.println("user logs in");
     }
 
+    @When("^User signs in with following details$")
+    public void user_signs_in_with_following_details(DataTable arg) {
+        List<String> obj = arg.asList(String.class);
+        System.out.println(obj.get(0));
+        System.out.println(obj.get(1));
+        System.out.println(obj.get(2));
+        System.out.println(obj.get(3));
+        System.out.println(obj.get(4));
+    }
 
     @Then("^Homepage is populated$")
-    public void homepageIsPoulated() {
+    public void homepageIsPopulated() {
         System.out.println("homepage is populated");
     }
 
