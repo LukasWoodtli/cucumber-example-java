@@ -12,12 +12,14 @@ import org.junit.runner.RunWith;
         systemProperty "cucumber.options", System.getProperty("cucumber.options")
     }`
 
-
+    Add `dryRun=true` to scan for features withaout running them.
  */
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/java/features",
-        glue = "steps")
+        strict = true,
+        glue = "steps",
+        plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/cukes.xml"})
 public class TestRunner {
 }
