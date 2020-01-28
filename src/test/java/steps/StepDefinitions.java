@@ -32,6 +32,13 @@ public class StepDefinitions {
         System.out.println(obj.get(4));
     }
 
+    @When("^User signs in with \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void user_signs_in_with_username_and_password(String username, String password) {
+        System.out.println(username);
+        System.out.println(password);
+
+    }
+
     @Then("^Homepage is populated$")
     public void homepageIsPopulated() {
         System.out.println("homepage is populated");
