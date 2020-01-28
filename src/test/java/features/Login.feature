@@ -1,11 +1,18 @@
 Feature: Application Login
 
+  Background:
+    Given validate the browser
+    When Browser is triggered
+    Then Check if browser is started
+
+  @SmokeTest
   Scenario: Home page default login
     Given User is on NetBanking landing page
     When User logs into the application with "jin" and password "1234"
     Then Homepage is populated
     And Cards are displayed: "true"
 
+  @RegTest
   Scenario: Home page default login
     Given User is on NetBanking landing page
     When User logs into the application with "john" and password "4321"

@@ -50,4 +50,21 @@ public class StepDefinitions {
         System.out.println("cards are displayed: " + arg);
     }
 
+
+    /// Background
+
+    @Given("^validate the browser$")
+    public void validate_the_browser() {
+        System.out.println("> Background: validate the browser");
+    }
+
+    @When("^Browser is triggered$")
+    public void browser_is_triggered() {
+        System.out.println("> Background: Browser is triggered");
+    }
+
+    @Then("^Check if browser is started$")
+    public void check_if_browser_is_started() {
+        System.out.println("> Background: Check if browser is started");
+    }
 }
