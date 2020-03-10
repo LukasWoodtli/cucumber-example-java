@@ -1,6 +1,7 @@
 package steps;
 
 import cucumber.api.DataTable;
+import cucumber.api.Format;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -8,6 +9,7 @@ import org.junit.Assert;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 
@@ -229,5 +231,23 @@ public class CookbookStepDefinitions {
         Assert.assertEquals("cucumber cookbook", arg1);
         System.out.println(arg1);
         System.out.println(arg2);
+    }
+
+    @Given("^I have a user account with (.*?) rights$")
+    public void
+    i_have_a_user_account_with_Manager_rights(String role) {
+        //prints the role
+        System.out.println(role);
+    }
+
+    @Then("^I should receive an email with the body:$")
+    public void i_should_receive_an_email_with_the_body(String docString) {
+        /* prints the content of Doc String with Scenario outlineSubstitution */
+        System.out.println(docString);
+    }
+
+    @Given("^My Birthday is on \"(.*)\"$")
+    public void my_Birthday_is_on(@Format("DD.mm.yyy") Date bDay)  {
+        System.out.println("My birthday: " + bDay);
     }
 }

@@ -8,6 +8,7 @@ Feature: Home Page
     And user enters password
     And user clicks on login button
     Then user is on Application home page
+  @web
   Scenario: Home Page Default content
     Then user gets a GitHub bootcamp section
   Scenario: GitHub Bootcamp Section
