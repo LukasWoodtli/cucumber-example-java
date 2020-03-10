@@ -23,7 +23,6 @@ import org.junit.runner.RunWith;
         features = "src/test/java/features",
         strict = true,
         glue = "steps",
-        plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/cukes.xml"},
-        Snippets = SnippetType.CAMELCASE)
+        plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/cukes.xml"})
 public class TestRunner {
 }
